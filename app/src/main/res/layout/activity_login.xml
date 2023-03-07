@@ -8,6 +8,7 @@
 
     <EditText
         android:id="@+id/edTxt_adress"
+        android:hint="Эл.почта"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -23,6 +24,7 @@
         android:id="@+id/edTxt_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:hint="Пароль"
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
