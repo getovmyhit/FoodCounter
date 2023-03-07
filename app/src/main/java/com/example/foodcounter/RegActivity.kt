@@ -12,15 +12,15 @@ class RegActivity : AppCompatActivity() {
         setContentView(R.layout.activity_reg)
 
         val user = "String"
-        val email: "Sabaka@sk.com"
+        val email= "Sabaka@sk.com"
         val password = "12345"
         btn_finishReg.setOnClickListener {
             if(etxt_regName.text.toString() == "$user" && etxt_regPassword.text.toString() == "$password") {
-                Toast.makeText(this, "Login is successed", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Вы вошли в систему", Toast.LENGTH_SHORT).show()
                 txtProfile.text = "Добро пожаловать в FoodCounter,\nДорогой друг $user"
             }
             else {
-                Toast.makeText(this, "Login is failed", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Ошибка входа", Toast.LENGTH_SHORT).show()
                 txtProfile.text = "Ошибка доступа\nПопробуйте снова!"
             }
         }
