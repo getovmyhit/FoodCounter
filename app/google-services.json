@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "176076039154",
+    "project_id": "foodcounter-av",
+    "storage_bucket": "foodcounter-av.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:176076039154:android:91da9793249bf2f133016b",
+        "android_client_info": {
+          "package_name": "com.example.foodcounter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "176076039154-7vcfb3lkmctb5f4i1h0hrrkmi8koq2kd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWJDGjr5wB4DCLNgddP7smcSffqqFB_us"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "176076039154-7vcfb3lkmctb5f4i1h0hrrkmi8koq2kd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
