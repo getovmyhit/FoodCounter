@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
         reg_btn.setOnClickListener {
             val intentReg = Intent (this, RegActivity::class.java)
             startActivity(intentReg)
+            //hui
         }
 
 
