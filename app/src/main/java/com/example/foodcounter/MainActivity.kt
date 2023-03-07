@@ -15,7 +15,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         auth = Firebase.auth
-        val gratz: String
         //получаем текущего вошедшего пользователя
         val currentUser = auth.currentUser
         if (currentUser != null) {
@@ -29,14 +28,13 @@ class MainActivity : AppCompatActivity() {
             val intentSignin = Intent (this, LoginActivity::class.java)
             startActivity(intentSignin)
         }
-        gratz = intent.getStringExtra("txtgratz").toString()
-        if (gratz!=null)
+
+        var gratz = intent.getBooleanExtra("true",false)
+        if (gratz)
         {
-            //Toast.makeText(this, "пусто", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Поздравляем, Вы успешно зарегистрировались!", Toast.LENGTH_SHORT).show()
         }
-        else{
-            Toast.makeText(this, "$gratz", Toast.LENGTH_SHORT).show()
-        }
+        else{ }
 
     }
 }

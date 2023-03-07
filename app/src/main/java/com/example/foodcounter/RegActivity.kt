@@ -35,6 +35,7 @@ class RegActivity : AppCompatActivity() {
                         progressbar.isVisible=false
                         if (task.isSuccessful) {
                             var startscreen = Intent(this, MainActivity::class.java)
+                            startscreen.putExtra("true",true)
                             startActivity(startscreen)
                             finish()
                         } else {
@@ -45,12 +46,18 @@ class RegActivity : AppCompatActivity() {
                     }
             else {
                 when {
-                    etxt_regName.text.toString().isEmpty() ->
+                    etxt_regName.text.toString().isEmpty() -> {
                         Toast.makeText(this, "Введите ваше имя", Toast.LENGTH_SHORT).show()
-                    etxt_regMail.text.toString().isEmpty() ->
+                        progressbar.isVisible = false
+                    }
+                    etxt_regMail.text.toString().isEmpty() -> {
                         Toast.makeText(this, "Введите почту", Toast.LENGTH_SHORT).show()
-                    etxt_regPassword.text.toString().isEmpty() ->
+                        progressbar.isVisible = false
+                    }
+                    etxt_regPassword.text.toString().isEmpty() -> {
                         Toast.makeText(this, "Придумайте пароль", Toast.LENGTH_SHORT).show()
+                        progressbar.isVisible = false
+                    }
                     else -> {}
                 }
             }

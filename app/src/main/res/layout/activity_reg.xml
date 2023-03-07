@@ -80,7 +80,7 @@
         android:id="@+id/txtProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PROFILE"
+        android:text="FOOD COUNTER"
         android:textSize="30dp"
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/etxt_regName"
