@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         reg_btn.setOnClickListener {
-            val intentReg = Intent (this, RegActivity::class.java)
+            var intentReg = Intent (this, RegActivity::class.java)
             startActivity(intentReg)
         }
 
