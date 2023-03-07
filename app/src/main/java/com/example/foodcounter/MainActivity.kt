@@ -16,10 +16,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         auth = Firebase.auth
         //получаем текущего вошедшего пользователя
-        val currentUser = auth.currentUser
+      /*  val currentUser = auth.currentUser
         if (currentUser != null) {
             //startActivity(profile)
-        }
+        }*/
         btn_reg.setOnClickListener {
             val intentReg = Intent (this, RegActivity::class.java)
             startActivity(intentReg)

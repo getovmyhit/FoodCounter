@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">FoodCounter</string>
+    <string name="title_activity_first">FirstActivity</string>
+    <string name="action_settings">Settings</string>
 </resources>

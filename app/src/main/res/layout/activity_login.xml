@@ -8,31 +8,33 @@
 
     <EditText
         android:id="@+id/edTxt_adress"
-        android:hint="Эл.почта"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Эл.почта"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.547"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.298" />
+        app:layout_constraintVertical_bias="0.298"
+        tools:ignore="TextSizeCheck" />
 
     <EditText
         android:id="@+id/edTxt_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Пароль"
         android:ems="10"
+        android:hint="Пароль"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/edTxt_adress"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/edTxt_adress"
         app:layout_constraintTop_toBottomOf="@+id/edTxt_adress"
-        app:layout_constraintVertical_bias="0.121" />
+        app:layout_constraintVertical_bias="0.121"
+        tools:ignore="TextSizeCheck" />
 
     <Button
         android:id="@+id/btn_signIn2"
@@ -44,5 +46,7 @@
         app:layout_constraintHorizontal_bias="0.534"
         app:layout_constraintStart_toStartOf="@+id/edTxt_password"
         app:layout_constraintTop_toBottomOf="@+id/edTxt_password"
-        app:layout_constraintVertical_bias="0.312" />
+        app:layout_constraintVertical_bias="0.312"
+        tools:ignore="TextSizeCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
