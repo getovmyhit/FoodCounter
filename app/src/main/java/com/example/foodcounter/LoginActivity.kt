@@ -8,9 +8,9 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        val user = BD.Firebase
-        val email= BD.Firebase
-        val password = BD.Firebase
+        val user = "BD.Firebase"
+        val email= "BD.Firebase"
+        val password = "BD.Firebase"
         btn_finishReg.setOnClickListener {
             if(etxt_regName.text.toString() == "$user" && etxt_regPassword.text.toString() == "$password") {
                 //Toast.makeText(this, "Вы вошли в систему", Toast.LENGTH_SHORT).show()

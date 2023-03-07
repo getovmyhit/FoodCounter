@@ -8,6 +8,7 @@
 
     <EditText
         android:id="@+id/etxt_regName"
+        android:hint="Ваше имя"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -26,6 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:hint="Эл.почта"
         android:ems="10"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -38,6 +40,7 @@
 
     <EditText
         android:id="@+id/etxt_regPassword"
+        android:hint="Пароль"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
