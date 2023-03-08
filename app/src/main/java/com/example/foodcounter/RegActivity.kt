@@ -19,10 +19,6 @@ class RegActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reg)
         auth = Firebase.auth
-        val currentUser = auth.currentUser
-        if (currentUser != null) {
-            //startActivity(profile)
-        }
 
         etxt_regPassword.doOnTextChanged { text, start, before, count ->
             if (etxt_regPassword.text.length < 8) {
@@ -43,14 +39,13 @@ class RegActivity : AppCompatActivity() {
                     .addOnCompleteListener(){ task ->
                         progressbar.isVisible=false
                         if (task.isSuccessful) {
-                            var startscreen = Intent(this, MainActivity::class.java)
-                            startscreen.putExtra("true",true)
-                            startActivity(startscreen)
+                            var intentStart = Intent(this, MainActivity::class.java)
+                            intentStart.putExtra("true",true)
+                            startActivity(intentStart)
                             finish()
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(this, "Ошибка, попробуйте снова!", Toast.LENGTH_SHORT).show()
-                            onRestart()
                         }
                     }
             else {
@@ -71,5 +66,16 @@ class RegActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val currentUser = auth.currentUser
+        val intentFirst = Intent(this, FirstActivity::class.java)
+        if (currentUser != null) {
+            startActivity(intentFirst)
+        }
+        else{ }
+
     }
 }

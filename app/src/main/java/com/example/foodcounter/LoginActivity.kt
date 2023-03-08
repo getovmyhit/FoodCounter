@@ -14,17 +14,12 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         auth = Firebase.auth
-        val currentUser = auth.currentUser
 
-      /*  if (currentUser != null) {
-            startActivity(mainscreen)
-        }
-        else{ }
-*/
         btn_signIn2.setOnClickListener {
             lprogressbar.isVisible=true
             val email = edTxt_adress.text.toString()
@@ -33,8 +28,8 @@ class LoginActivity : AppCompatActivity() {
                 auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(){ task ->
                         lprogressbar.isVisible=false
                         if (task.isSuccessful) {
-                            val mainscreen = Intent(this, FirstActivity::class.java)
-                            startActivity(mainscreen)
+                            val intentFirst = Intent(this, FirstActivity::class.java)
+                            startActivity(intentFirst)
                             finish()
                         } else {
                             Toast.makeText(this, "Ошибка входа, попробуйте снова!",
@@ -55,5 +50,14 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+    override fun onStart() {
+        super.onStart()
+        val currentUser = auth.currentUser
+        val intentFirst = Intent(this, FirstActivity::class.java)
+        if (currentUser != null) {
+            startActivity(intentFirst)
+          }
+          else{ }
     }
 }
