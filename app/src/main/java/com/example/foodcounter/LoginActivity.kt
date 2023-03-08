@@ -4,11 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.google.android.gms.common.FirstPartyScopes
+import androidx.core.view.isVisible
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_login.*
+
 
 
 class LoginActivity : AppCompatActivity() {
@@ -25,14 +26,14 @@ class LoginActivity : AppCompatActivity() {
         else{ }
 */
         btn_signIn2.setOnClickListener {
-            //progressbar.isVisible=true
+            lprogressbar.isVisible=true
             val email = edTxt_adress.text.toString()
             val password = edTxt_password.text.toString()
             if (email.isNotEmpty() && password.isNotEmpty())
                 auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(){ task ->
-                        //progressbar.isVisible=false
+                        lprogressbar.isVisible=false
                         if (task.isSuccessful) {
-                            var mainscreen = Intent(this, FirstActivity::class.java)
+                            val mainscreen = Intent(this, FirstActivity::class.java)
                             startActivity(mainscreen)
                             finish()
                         } else {
@@ -44,11 +45,11 @@ class LoginActivity : AppCompatActivity() {
                 when {
                     email.isEmpty() -> {
                         Toast.makeText(this, "Введите почту", Toast.LENGTH_SHORT).show()
-                        //progressbar.isVisible = false
+                        lprogressbar.isVisible = false
                     }
                     password.isEmpty() -> {
                         Toast.makeText(this, "Введите пароль", Toast.LENGTH_SHORT).show()
-                        //progressbar.isVisible = false
+                        lprogressbar.isVisible = false
                     }
                     else -> {}
                 }
