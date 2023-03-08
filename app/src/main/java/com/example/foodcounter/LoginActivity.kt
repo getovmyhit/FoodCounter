@@ -34,6 +34,9 @@ class LoginActivity : AppCompatActivity() {
                         } else {
                             Toast.makeText(this, "Ошибка входа, попробуйте снова!",
                                 Toast.LENGTH_SHORT).show()
+                            textInputLayout.helperText = getString(R.string.error_mail)
+                            textInputLayout2.helperText = getString(R.string.errorLog_password)
+
                         }
                     }
             else {

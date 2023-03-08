@@ -10,4 +10,7 @@
     <string name="name_app">Food counter</string>
     <string name="start_reg">Регистрация</string>
     <string name="forgot_password">Забыл(а) пароль?</string>
+    <string name="error_mail">Неверный адрес электронной почты</string>
+    <string name="errorReg_password">Пароль должен содержать не менее 8 символов</string>
+    <string name="errorLog_password">Неверный пароль</string>
 </resources>

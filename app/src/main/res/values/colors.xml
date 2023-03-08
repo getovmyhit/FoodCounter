@@ -8,5 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="red">#D30505</color>
+    <color name="red_app">#F5484A</color>
+    <color name="oran_app">#FF9800</color>
 
 </resources>
