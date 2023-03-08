@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import androidx.core.widget.doOnTextChanged
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -21,6 +22,14 @@ class RegActivity : AppCompatActivity() {
         val currentUser = auth.currentUser
         if (currentUser != null) {
             //startActivity(profile)
+        }
+
+        etxt_regPassword.doOnTextChanged { text, start, before, count ->
+            if (etxt_regPassword.text.length < 8) {
+                txterror.isVisible = true
+                txterror.text = "Пароль должен содержать не менее 8 символов"
+            }
+            else {txterror.isVisible = false}
         }
 
         btn_finishReg.setOnClickListener {
