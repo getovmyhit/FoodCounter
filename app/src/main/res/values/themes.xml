@@ -19,4 +19,5 @@
     </style>
     <style name="Theme.FoodCounter.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.FoodCounter.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>
