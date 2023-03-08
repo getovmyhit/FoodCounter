@@ -15,11 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         auth = Firebase.auth
-        //получаем текущего вошедшего пользователя
-      /*  val currentUser = auth.currentUser
-        if (currentUser != null) {
-            //startActivity(profile)
-        }*/
+
         btn_reg.setOnClickListener {
             val intentReg = Intent (this, RegActivity::class.java)
             startActivity(intentReg)
@@ -29,10 +25,22 @@ class MainActivity : AppCompatActivity() {
             startActivity(intentSignin)
         }
 
-        var gratz = intent.getBooleanExtra("true",false)
+       /* var gratz = intent.getBooleanExtra("true",false)
         if (gratz)
         {
-            Toast.makeText(this, "Поздравляем, Вы успешно зарегистрировались!", Toast.LENGTH_SHORT).show()
+            val currentUser = auth.currentUser
+            Toast.makeText(this, "Авторизовались как ${currentUser?.email.toString()}", Toast.LENGTH_SHORT).show()
+        }
+        else{ }*/
+
+    }
+    override fun onStart() {
+        super.onStart()
+        val currentUser = auth.currentUser
+        val intentFirst = Intent(this, FirstActivity::class.java)
+        if (currentUser != null) {
+            startActivity(intentFirst)
+            Toast.makeText(this, "Авторизовались как ${currentUser?.email.toString()}", Toast.LENGTH_SHORT).show()
         }
         else{ }
 

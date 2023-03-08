@@ -40,7 +40,7 @@ class RegActivity : AppCompatActivity() {
                         progressbar.isVisible=false
                         if (task.isSuccessful) {
                             var intentStart = Intent(this, MainActivity::class.java)
-                            intentStart.putExtra("true",true)
+                            //intentStart.putExtra("true",true)
                             startActivity(intentStart)
                             finish()
                         } else {
