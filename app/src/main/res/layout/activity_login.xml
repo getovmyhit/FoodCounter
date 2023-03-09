@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/startbg"
     tools:context=".LoginActivity">
 
     <com.google.android.material.textfield.TextInputLayout
@@ -17,6 +18,7 @@
         android:layout_marginBottom="8dp"
         app:helperTextTextColor="@color/red_app"
         app:counterEnabled="true"
+        app:counterTextColor="@color/white"
         app:counterMaxLength="30"
         app:endIconMode="clear_text"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
@@ -28,6 +30,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edTxt_adress"
+            android:background="@color/white"
             android:maxLength="31"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,8 +40,8 @@
 
     <Button
         android:id="@+id/btn_signIn2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="187dp"
+        android:layout_height="41dp"
         android:layout_marginTop="32dp"
         android:text="@string/hint_signin"
         app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
@@ -54,10 +57,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="6dp"
         android:layout_marginEnd="32dp"
         app:counterEnabled="true"
         app:counterMaxLength="20"
+        app:counterTextColor="@color/white"
         app:endIconMode="password_toggle"
         app:helperTextTextColor="@color/red_app"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,6 +72,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edTxt_password"
+            android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/hint_password"
