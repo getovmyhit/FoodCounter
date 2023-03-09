@@ -41,11 +41,11 @@ class LoginActivity : AppCompatActivity() {
                     }
             else {
                 when {
-                    email.isEmpty() -> {
+                    email.isEmpty()&&password.isNotEmpty() -> {
                         Toast.makeText(this, "Введите почту", Toast.LENGTH_SHORT).show()
                         lprogressbar.isVisible = false
                     }
-                    password.isEmpty() -> {
+                    password.isEmpty()&&email.isNotEmpty() -> {
                         Toast.makeText(this, "Введите пароль", Toast.LENGTH_SHORT).show()
                         lprogressbar.isVisible = false
                     }

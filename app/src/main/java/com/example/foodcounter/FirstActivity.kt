@@ -7,8 +7,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_first.*
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.Dispatchers.Main
+import kotlinx.android.synthetic.main.activity_first.view.*
 
 
 private lateinit var auth: FirebaseAuth
@@ -23,20 +22,30 @@ class FirstActivity : AppCompatActivity() {
            Firebase.auth.signOut()
             val intentStart= Intent(this, MainActivity::class.java)
             if (currentUser != null) {
-                txtname.text = "До свидания!"
+                infotext.text = "До свидания!"
                 android.os.Handler().postDelayed({ startActivity(intentStart)}, 2000)
             }
             else {}
         }
+
+        btn_update.setOnClickListener {
+
+        }
     }
+
 
     override fun onStart() {
         super.onStart()
         val currentUser = auth.currentUser
+
         if (currentUser != null) {
-            txtname.text = "Добро пожаловать!\n"+currentUser.email.toString()
-            textView1.text = currentUser.displayName
-            textView2.text = currentUser.uid
+            val avatar = currentUser.photoUrl
+            infotext.text = "Добро пожаловать!\n"
+            //avatarView.
+            showName.text = currentUser.displayName
+            showEmail.text = currentUser.email
+            showUID.text = currentUser.uid
+            showVerified.text = currentUser.isEmailVerified.toString()
         }
         else {}
     }
