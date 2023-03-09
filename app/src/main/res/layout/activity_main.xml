@@ -4,44 +4,132 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/startbg"
     tools:context=".MainActivity">
 
-
-    <Button
-        android:id="@+id/btn_reg"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:text="@string/start_reg"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/txtnameApp"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.483" />
+        app:layout_constraintVertical_bias="0.686" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="276dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="30"
+        app:counterTextColor="@color/white"
+        app:endIconMode="clear_text"
+        app:helperTextTextColor="@color/red_app"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.64"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:startIconDrawable="@drawable/name_draw">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edTxt_adress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:hint="@string/hint_mail"
+            android:maxLength="31" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <Button
         android:id="@+id/btn_signin"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:text="@string/hint_signin"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/btn_reg"
+        android:layout_width="205dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/signin"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
+        app:layout_constraintHorizontal_bias="0.718"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+        tools:ignore="TextSizeCheck" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout2"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        :layout_constraintEnd_toEndOf="@+id/textInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginHorizontal="32dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
+        app:counterTextColor="@color/white"
+        app:endIconMode="password_toggle"
+        app:helperTextTextColor="@color/red_app"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/btn_reg"
-        app:layout_constraintTop_toBottomOf="@+id/btn_reg"
-        app:layout_constraintVertical_bias="0.096" />
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        app:startIconDrawable="@drawable/pass_key">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edTxt_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:hint="@string/hint_password"
+            android:maxLength="21" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/txtnameApp" />
+
 
     <TextView
         android:id="@+id/btn_forget"
         android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:gravity="center"
+        android:layout_height="40dp"
+        android:layout_marginEnd="-32dp"
+        android:gravity="end"
+        android:linksClickable="true"
         android:text="@string/forgot_password"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+
+    <TextView
+        android:id="@+id/btn_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/signup"
+        android:textSize="16dp"
+        android:textColor="@color/white"
+        android:gravity="center_horizontal"
+        android:linksClickable="true"
         app:layout_constraintEnd_toEndOf="@+id/btn_signin"
         app:layout_constraintStart_toStartOf="@+id/btn_signin"
-        app:layout_constraintTop_toBottomOf="@+id/btn_signin"
-        app:layout_constraintVertical_bias="0.197" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_signin" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

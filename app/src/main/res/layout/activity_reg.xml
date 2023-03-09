@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/startbg"
     tools:context=".RegActivity">
 
 
@@ -58,7 +59,7 @@
         android:id="@+id/btn_finishReg"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:text="@string/hint_reg"
+        android:text="@string/signup2"
         android:textSize="32px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/etxt_regPassword"
@@ -71,7 +72,7 @@
         android:id="@+id/progressbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="32dp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="@+id/btn_finishReg"
         app:layout_constraintStart_toStartOf="@+id/btn_finishReg"
@@ -81,7 +82,7 @@
         android:id="@+id/txtnameApp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
+        android:text="@string/name_app"
         android:textSize="30dp"
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/etxt_regName"
