@@ -1,10 +1,13 @@
 package com.example.foodcounter
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.widget.doOnTextChanged
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_first.*
 import kotlinx.android.synthetic.main.activity_first.view.*
@@ -28,9 +31,25 @@ class FirstActivity : AppCompatActivity() {
             else {}
         }
 
-        btn_update.setOnClickListener {
+            //showName.set
 
+        val userUpdater = userProfileChangeRequest {
+            displayName=showName.text.toString()
+            //photoUri=
         }
+        btn_update.setOnClickListener {
+           currentUser!!.updateProfile(userUpdater).addOnCompleteListener {task ->
+               if (task.isSuccessful)
+               {
+                   onStart()
+               }
+               else {
+                   infotext.text = "Произошла ошибка"
+               }
+           }
+        }
+
+
     }
 
 
@@ -41,7 +60,7 @@ class FirstActivity : AppCompatActivity() {
         if (currentUser != null) {
             val avatar = currentUser.photoUrl
             infotext.text = "Добро пожаловать!\n"
-            //avatarView.
+            avatarView.setImageURI(avatar)
             showName.text = currentUser.displayName
             showEmail.text = currentUser.email
             showUID.text = currentUser.uid
