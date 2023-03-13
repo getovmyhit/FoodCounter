@@ -18,4 +18,6 @@
     <string name="txtv_welcome">Добро пожаловать в</string>
     <string name="txt_restore">Восстановить пароль</string>
     <string name="txt_enterMAil">Введите свой e-mail, на который Вам будет направлен SMS-код для смены пароля </string>
+    <string name="btn_cancel">Отменить</string>
+    <string name="btn_send">Отправить</string>
 </resources>

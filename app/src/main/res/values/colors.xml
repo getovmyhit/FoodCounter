@@ -7,5 +7,7 @@
     <color name="red_app">#F5484A</color>
     <color name="oran_app">#FF9800</color>
     <color name="transparent">#00FFFFFF</color>
+    <color name="grey">#2E2E2E</color>
+    <color name="light_grey">#807D7D</color>
 
 </resources>

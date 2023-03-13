@@ -73,16 +73,15 @@
 
     <Button
         android:id="@+id/btn_signin"
-        android:layout_width="205dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="32dp"
+        android:layout_width="234dp"
+        android:layout_height="51dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/rectangle_25"
         android:fontFamily="@font/advent_pro_bold"
         android:hapticFeedbackEnabled="false"
         android:text="@string/signin"
         app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
-        app:layout_constraintHorizontal_bias="0.756"
+        app:layout_constraintHorizontal_bias="0.842"
         app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
         tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
