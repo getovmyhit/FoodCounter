@@ -14,7 +14,6 @@ import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.edTxt_adress
 import kotlinx.android.synthetic.main.activity_main.edTxt_password
-import kotlinx.android.synthetic.main.activity_main.progressbar
 import kotlinx.android.synthetic.main.activity_main.textInputLayout
 import kotlinx.android.synthetic.main.activity_main.textInputLayout2
 import kotlinx.android.synthetic.main.activity_reg.*

@@ -4,69 +4,155 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/startbg"
+    android:background="@drawable/startbg2"
     tools:context=".RegActivity">
 
 
-    <EditText
-        android:id="@+id/etxt_regName"
-        android:hint="@string/hint_name"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/etxtnameApp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:ems="10"
-        android:inputType="textPersonName"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/rock_salt"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textColor="@color/oran_app"
+        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.268" />
+        app:layout_constraintVertical_bias="0.234" />
 
-    <EditText
-        android:id="@+id/etxt_regMail"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_yourname"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="@string/hint_mail"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/etxt_regName"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="@+id/etxt_regName"
-        app:layout_constraintTop_toBottomOf="@+id/etxt_regName"
-        app:layout_constraintVertical_bias="0.052" />
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="30"
+        app:counterTextColor="@color/white"
+        app:endIconMode="clear_text"
+        app:helperTextTextColor="@color/red_app"
+        app:layout_constraintEnd_toEndOf="@+id/etxtnameApp"
+        app:layout_constraintStart_toStartOf="@+id/etxtnameApp"
+        app:layout_constraintTop_toBottomOf="@+id/etxtnameApp"
+        app:startIconDrawable="@drawable/__icon__user_">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etxt_regName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:hint="@string/hint_name"
+            android:maxLength="31"
+            android:maxLines="1"
+            android:textColorHint="@color/white"
 
-    <EditText
-        android:id="@+id/etxt_regPassword"
-        android:hint="@string/hint_password"
-        android:layout_width="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_mail"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/etxt_regMail"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="@+id/etxt_regMail"
-        app:layout_constraintTop_toBottomOf="@+id/etxt_regMail"
-        app:layout_constraintVertical_bias="0.072"></EditText>
+        android:layout_marginHorizontal="32dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="30"
+        app:counterTextColor="@color/white"
+        app:endIconMode="clear_text"
+        app:helperTextTextColor="@color/red_app"
+        app:layout_constraintEnd_toEndOf="@+id/input_yourname"
+        app:layout_constraintStart_toStartOf="@+id/input_yourname"
+        app:layout_constraintTop_toBottomOf="@+id/input_yourname"
+        app:startIconDrawable="@drawable/icon__sms">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etxt_regMail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:hint="@string/hint_mail"
+            android:maxLength="31"
+            android:maxLines="1" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
+        app:counterTextColor="@color/white"
+        app:endIconMode="password_toggle"
+        app:helperTextTextColor="@color/red_app"
+        app:layout_constraintEnd_toEndOf="@+id/input_mail"
+        app:layout_constraintStart_toStartOf="@+id/input_mail"
+        app:layout_constraintTop_toBottomOf="@+id/input_mail"
+        app:startIconDrawable="@drawable/vector_key">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etxt_regPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:hint="@string/hint_password"
+            android:maxLength="21"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_passwordRepeat"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        :layout_constraintEnd_toEndOf="@+id/textInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
+        app:counterTextColor="@color/white"
+        app:endIconMode="password_toggle"
+        app:helperTextTextColor="@color/red_app"
+        app:layout_constraintEnd_toEndOf="@+id/input_password"
+        app:layout_constraintStart_toStartOf="@+id/input_password"
+        app:layout_constraintTop_toBottomOf="@+id/input_password"
+        app:startIconDrawable="@drawable/vector_key">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edTxt_passwordRepeat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:hint="@string/hint_passwordRepeat"
+            android:maxLength="21"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <Button
         android:id="@+id/btn_finishReg"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:layout_width="234dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/rectangle_25"
+        android:fontFamily="@font/advent_pro_bold"
+        android:hapticFeedbackEnabled="false"
         android:text="@string/signup2"
-        android:textSize="32px"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/etxt_regPassword"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/etxt_regPassword"
-        app:layout_constraintTop_toBottomOf="@+id/etxt_regPassword"
-        app:layout_constraintVertical_bias="0.135" />
+        app:layout_constraintEnd_toEndOf="@+id/input_passwordRepeat"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@+id/input_passwordRepeat"
+        app:layout_constraintTop_toBottomOf="@+id/input_passwordRepeat"
+        tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
 
     <ProgressBar
         android:id="@+id/progressbar"
@@ -77,34 +163,5 @@
         app:layout_constraintEnd_toEndOf="@+id/btn_finishReg"
         app:layout_constraintStart_toStartOf="@+id/btn_finishReg"
         app:layout_constraintTop_toBottomOf="@+id/btn_finishReg"></ProgressBar>
-
-    <TextView
-        android:id="@+id/txtnameApp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/name_app"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/etxt_regName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.805" />
-
-    <TextView
-        android:id="@+id/txterror"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:gravity="start"
-        android:text="*Ошибка"
-        android:textColor="@color/red"
-        android:textSize="10sp"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="@+id/etxt_regPassword"
-        app:layout_constraintHorizontal_bias="0.023"
-        app:layout_constraintStart_toStartOf="@+id/etxt_regPassword"
-        app:layout_constraintTop_toBottomOf="@+id/etxt_regPassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
