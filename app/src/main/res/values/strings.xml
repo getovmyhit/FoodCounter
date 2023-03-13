@@ -16,4 +16,6 @@
     <string name="errorReg_password">Пароль должен содержать не менее 8 символов</string>
     <string name="errorLog_password">Неверный пароль</string>
     <string name="txtv_welcome">Добро пожаловать в</string>
+    <string name="txt_restore">Восстановить пароль</string>
+    <string name="txt_enterMAil">Введите свой e-mail, на который Вам будет направлен SMS-код для смены пароля </string>
 </resources>
