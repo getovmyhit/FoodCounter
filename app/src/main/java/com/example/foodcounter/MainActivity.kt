@@ -4,13 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 import androidx.core.view.isVisible
 import androidx.core.widget.doOnTextChanged
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.edTxt_adress
 import kotlinx.android.synthetic.main.activity_main.edTxt_password
@@ -24,7 +23,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         auth = Firebase.auth
-
         btn_signup.setOnClickListener {
             val intentReg = Intent (this, RegActivity::class.java)
             startActivity(intentReg)
@@ -39,7 +37,8 @@ class MainActivity : AppCompatActivity() {
                     android.os.Handler().postDelayed({ progressbar.isVisible = false }, 1000)
                     if (task.isSuccessful) {
                         val intentFirst = Intent(this, FirstActivity::class.java)
-                        startActivity(intentFirst)
+                        onStart()
+                        //startActivity(intentFirst)
                         finish()
                     } else {
                         Toast.makeText(
@@ -65,22 +64,19 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-
-        val authDB = Firebase
-        edTxt_adress.doOnTextChanged { text, start, before, count ->
-            when {
-                //edTxt_adress.text != auth
-
-            }
-        }
     }
     override fun onStart() {
         super.onStart()
-        val currentUser = auth.currentUser
         val intentFirst = Intent(this, FirstActivity::class.java)
+        val currentUser = auth.currentUser
+        val name = "nihuya"//intent.getStringExtra("userName")
         if (currentUser != null) {
+            val userUpdater = userProfileChangeRequest {
+            displayName="$name"
+            }
+            currentUser!!.updateProfile(userUpdater)
             startActivity(intentFirst)
-            Toast.makeText(this, "Авторизовались как ${currentUser?.email.toString()}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Авторизовались как ${currentUser.displayName.toString()}", Toast.LENGTH_SHORT).show()
         }
         else{ }
 

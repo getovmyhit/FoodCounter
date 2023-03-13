@@ -10,6 +10,7 @@ import androidx.core.view.isVisible
 import androidx.core.widget.doOnTextChanged
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_reg.*
 
@@ -21,27 +22,24 @@ class RegActivity : AppCompatActivity() {
         setContentView(R.layout.activity_reg)
         auth = Firebase.auth
 
-       /* etxt_regPassword.doOnTextChanged { text, start, before, count ->
-            if (etxt_regPassword.text.length < 8) {
-                txterror.isVisible = true
-                txterror.text = "Пароль должен содержать не менее 8 символов"
-            }
-                    else {txterror.isVisible = false}
-        }*/
 
         btn_finishReg.setOnClickListener {
             progressbar.isVisible=true
             val name = etxt_regName.text.toString()
             val email = etxt_regMail.text.toString()
             val password = etxt_regPassword.text.toString()
+            val currentUser = auth.currentUser
+            var intentStart = Intent(this, MainActivity::class.java)
             if (etxt_regName.text.toString().isNotEmpty() && etxt_regMail.text.toString()
                     .isNotEmpty() && etxt_regPassword.text.toString().isNotEmpty())
                 auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(){ task ->
                         progressbar.isVisible=false
                         if (task.isSuccessful) {
-                            var intentStart = Intent(this, MainActivity::class.java)
-                            //intentStart.putExtra("true",true)
+                            val userUpdater = userProfileChangeRequest {
+                                displayName = name
+                            }
+                            currentUser!!.updateProfile(userUpdater)
                             startActivity(intentStart)
                             finish()
                         } else {
@@ -74,9 +72,9 @@ class RegActivity : AppCompatActivity() {
         val currentUser = auth.currentUser
         val intentFirst = Intent(this, FirstActivity::class.java)
         if (currentUser != null) {
-            startActivity(intentFirst)
+           startActivity(intentFirst)
         }
         else{ }
 
-          }
+    }
 }
