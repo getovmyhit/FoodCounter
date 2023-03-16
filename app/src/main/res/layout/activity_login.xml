@@ -31,7 +31,7 @@
         app:startIconDrawable="@drawable/name_draw">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edTxt_adress"
+            android:id="@+id/edtxt_emailLogin"
             android:background="@color/white"
             android:maxLength="31"
             android:layout_width="match_parent"
@@ -73,7 +73,7 @@
         app:startIconDrawable="@drawable/pass_key">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edTxt_password"
+            android:id="@+id/edtxt_loginPass"
             android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

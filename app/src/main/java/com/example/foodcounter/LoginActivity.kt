@@ -22,8 +22,8 @@ class LoginActivity : AppCompatActivity() {
 
         btn_signIn2.setOnClickListener {
             lprogressbar.isVisible=true
-            val email = edTxt_adress.text.toString()
-            val password = edTxt_password.text.toString()
+            val email = edtxt_emailLogin.text.toString()
+            val password = edtxt_loginPass.text.toString()
             if (email.isNotEmpty() && password.isNotEmpty())
                 auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(){ task ->
                         lprogressbar.isVisible=false

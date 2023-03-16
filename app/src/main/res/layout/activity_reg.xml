@@ -9,7 +9,7 @@
 
 
     <TextView
-        android:id="@+id/etxtnameApp"
+        android:id="@+id/txtnameApp2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -37,9 +37,9 @@
         app:counterTextColor="@color/white"
         app:endIconMode="clear_text"
         app:helperTextTextColor="@color/red_app"
-        app:layout_constraintEnd_toEndOf="@+id/etxtnameApp"
-        app:layout_constraintStart_toStartOf="@+id/etxtnameApp"
-        app:layout_constraintTop_toBottomOf="@+id/etxtnameApp"
+        app:layout_constraintEnd_toEndOf="@+id/txtnameApp2"
+        app:layout_constraintStart_toStartOf="@+id/txtnameApp2"
+        app:layout_constraintTop_toBottomOf="@+id/txtnameApp2"
         app:startIconDrawable="@drawable/__icon__user_">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -125,7 +125,7 @@
         app:startIconDrawable="@drawable/vector_key">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edTxt_passwordRepeat"
+            android:id="@+id/etxt_passwordRepeat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
@@ -154,10 +154,12 @@
         android:id="@+id/progressbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginBottom="8dp"
         android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="@+id/btn_finishReg"
-        app:layout_constraintStart_toStartOf="@+id/btn_finishReg"
-        app:layout_constraintTop_toBottomOf="@+id/btn_finishReg"></ProgressBar>
+        app:layout_constraintBottom_toTopOf="@+id/txtnameApp2"
+        app:layout_constraintEnd_toEndOf="@+id/txtnameApp2"
+        app:layout_constraintStart_toStartOf="@+id/txtnameApp2"
+        app:layout_constraintTop_toTopOf="parent"></ProgressBar>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
